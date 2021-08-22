@@ -17,4 +17,15 @@ class PostController extends Controller
 	{
 		return view('index')->with(['posts' => $post->getPaginateByLimit()]);
 	}
+
+	/**
+	 * 特定IDのpostを表示する
+	 *
+	 * @param Object Post 引数の$postはid=1のインスタンス
+	 * @return Response post view
+	 */
+	public function show(Post $post)
+	{
+		return view('show')->with(['post' => $post]);
+	}
 }
